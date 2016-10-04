@@ -13,8 +13,10 @@
 #define SAFE_SETITEMSTRING(dict, key, value) do { \
     PyObject *__tmp; \
     __tmp = value; \
-    if (__tmp) \
+    if (__tmp) { \
         PyDict_SetItemString(dict, key, __tmp); \
+	Py_DECREF(__tmp); \
+    } \
 } while(0)
 
 
