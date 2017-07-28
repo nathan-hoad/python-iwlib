@@ -1,4 +1,4 @@
-iwlib - interface with wireless tools in Linux
+# iwlib - interface with wireless tools in Linux
 ==============================================
 
 iwlib is a package for interfacing with iwlib, providing an implementation to
@@ -15,16 +15,16 @@ back from a device.
 
 http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
 
-Installation
+## Installation
 ------------
 
 Installation requires the Python developer tools, and wireless_tools package
 for compilation. If Python.h and iwlib.h exist on your system, you should be
 good to go.
 
-    $ pip install iwlib
+`$ pip install iwlib`
 
-Change History
+## Change History
 --------------
 
 1.5 (1st October 2014)
@@ -46,3 +46,27 @@ Change History
 
 1.2.1 (21st March 2013)
     - Initial release of code, as it was when I inherited it.
+    
+## Usage
+--------------
+run following command in a shell to see the available wireless interfaces
+`$ iwconfig `
+'wlan0' is very common, so that is what we will use for this quick guide
+
+The output is very similar to 
+`$ iwconfig interface `
+
+`>>import iwlib`
+`>>interface = 'wlan0'`
+`>>iwlib.get_iwconfig(interface)`
+`>> {'BitRate': b'72.2 Mb/s', 'ESSID': b'AP_SSID', 'Access Point': b'AP_MAC', 'stats': {'quality': 45, 'noise': 0, 'updated': 75, 'level': 191}, 'Frequency': b'2.422 GHz', 'Mode': b'Managed'}`
+ 
+The dict's values are byte strings. You can use b'xyz'.decode('utf-8') to decode them into python strings.
+
+Finally, here's the docstring for the function
+`>> print(iwlib.get_iwconfig.__doc__)
+Retrieve the current configuration of an interface. 
+
+Arguments:
+  - device to work on (e.g. eth1, wlan0).    
+`
