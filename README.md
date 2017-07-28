@@ -52,12 +52,12 @@ Depending on your linux distro, the package name may change. But this is tested 
     
 ## Quick Guide
 --------------
-Run following command in a shell to see the available wireless interfaces  
+Run following command in a bash shell to see the available wireless interfaces  
 `$ iwconfig `
 
 ('wlan0' is very common, so that is what we will use for this quick guide)  
 
-In the python Shell,   
+Now in the python interactive Shell,   
 `>> import iwlib`  
 `>> interface = 'wlan0'`  
 `>> iwlib.get_iwconfig(interface)`  
