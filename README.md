@@ -70,4 +70,3 @@ Finally, here's the docstring for the function
 ` Retrieve the current configuration of an interface. `  
 ` Arguments:`  
 `  - device to work on (e.g. eth1, wlan0). `
-`
