@@ -130,6 +130,8 @@ structs = """
         int mode;
         int essid_on;
         char essid[];
+        int has_freq;
+        double freq;
         ...;
     };
 
